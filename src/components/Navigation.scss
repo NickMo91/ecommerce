@@ -1,0 +1,21 @@
+.Nav {
+	text-align: center;
+	padding: 20px;
+	margin-bottom: 20px;
+	background: #000;
+	border-bottom: 1px solid #000;
+
+	&-link {
+		padding: 20px 100px;
+		color: #FFF;
+		text-decoration: none;
+
+		&:hover {
+			background-color: #303030;
+			border: 1px solid red;
+}
+		&.is-active {
+			text-decoration: underline;
+		}
+	}
+}
