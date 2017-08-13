@@ -13,7 +13,12 @@ class Navigation extends Component {
 		}, {
 			to: "checkout",
 			text: "Check Out",
-		}];
+		},
+		{
+			to: "/Product",
+			text: "Products",
+		},
+		];
 
 		return (
 			<nav className="Nav">
