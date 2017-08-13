@@ -6,9 +6,9 @@ import Navigation from "components/Navigation";
 import Home from "pages/Home";
 import FourOhFour from "pages/404";
 import Cart from "pages/Cart";
-import Success from "pages/success";
+import Success from "pages/Success";
 import Product from "pages/Product";
-import CheckOut from "pages/checkout";
+import CheckOut from "pages/Checkout";
 import Item from "pages/Item";
 
 
@@ -20,11 +20,11 @@ class App extends React.Component {
 					<Navigation/>
 					<Switch>
 						<Route exact path="/" component={Home} />
-						<Route exact path="/cart" component={Cart}/>
+						<Route exact path="/Cart" component={Cart}/>
 						<Route exact path="/success" component={Success}/>
 						<Route exact path="/Product" component={Product}/>
 						<Route exact path="/Item/:itemId" component={Item}/>
-						<Route exact path="/checkout" component={CheckOut}/>
+						<Route exact path="/Checkout" component={CheckOut}/>
 						<Route path="*" component={FourOhFour} />
 					</Switch>
 				</div>
