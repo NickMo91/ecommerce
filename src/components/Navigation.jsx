@@ -8,15 +8,15 @@ class Navigation extends Component {
 			to: "/",
 			text: "Home",
 		}, {
-			to: "/cart",
-			text: "My cart",
-		}, {
-			to: "checkout",
-			text: "Check Out",
-		},
-		{
 			to: "/Product",
 			text: "Products",
+		}, {
+			to: "cart",
+			text: "My Cart",
+		},
+		{
+			to: "/checkout",
+			text: "Check Out",
 		},
 		];
 
