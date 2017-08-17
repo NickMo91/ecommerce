@@ -11,23 +11,24 @@ class Item extends Component {
 	}
 	render() {
 		const item = PRODUCTS[this.state.itemId];
-		console.log(item);
 		return (
 			<div className="item-page">
 				<div className="item-page-items">
-					<h1 className="item-pg-item-rndr">
+					<h1 className="item-pg-items-header">
 						{item.name}
 					</h1>
-					<img className="item-pg-item-img" src={item.images[0].small}/>
-					<img className="item-pg-item-img" src={item.images[1].small}/>
-					<img className="item-pg-item-img" src={item.images[2].small}/>
+					<img className="item-pg-items-img" src={item.images[0].small}/>
+					<img className="item-pg-items-img" src={item.images[1].small}/>
+					<img className="item-pg-items-img" src={item.images[2].small}/>
 					<p>{item.price}</p>
-					<div className="item-page-item-description">Description:
-						<p className="item-page-item-description-p">
-							{item.description}
-						</p>
-					</div>
-				</div>,
+					<p>{item.category}</p>
+					<button>Add to Cart</button>
+				</div>
+				<div className="item-page-items-description">
+					<p className="item-page-items-description-p">
+						{item.description}
+					</p>
+				</div>
 			</div>
 
 

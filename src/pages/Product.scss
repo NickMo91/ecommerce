@@ -1,0 +1,16 @@
+.product-page {
+display: flex;
+flex-flow: row wrap;
+}
+.product-page-products {
+	margin-left: 30px;
+	margin-bottom: 10px;
+	width: 400px;
+	border: 1px solid black;
+
+
+	&-header {
+		text-align: center;
+		font-size: 35px;
+	}
+}

@@ -6,11 +6,9 @@ import { Link } from "react-router-dom";
 class Home extends Component {
 	render() {
 		return (
-			<div className="home-pages">
-				<div className="home-page-rndr">
-					<h1>Welcome to TimeX</h1>
-					<p>Go ahead and take a look at our <Link to={`/Product`}>Products:</Link></p>
-				</div>
+			<div className="home-page">
+				<h1>TimeX</h1>
+				<p>Go ahead and take a look at our <Link className="home-page-l" to={`/Product`}>Products:</Link></p>
 			</div>
 		);
 	}
