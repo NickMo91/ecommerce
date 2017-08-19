@@ -6,34 +6,49 @@ class Item extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			itemId: props.match.params.itemId,
 		};
 	}
+
+	_handleAddCart = (itemId) => {
+		this.props.handleAdd(this.props.item.id);
+	}
+
 	render() {
-		const item = PRODUCTS[this.state.itemId];
+		const { item, handleAdd } = this.props;
+
 		return (
 			<div className="item-page">
-				<div className="item-page-items">
-					<h1 className="item-pg-items-header">
-						{item.name}
-					</h1>
-					<img className="item-pg-items-img" src={item.images[0].small}/>
-					<img className="item-pg-items-img" src={item.images[1].small}/>
-					<img className="item-pg-items-img" src={item.images[2].small}/>
-					<p>{item.price}</p>
-					<p>{item.category}</p>
-					<button>Add to Cart</button>
+				<h1 className = "item-page-item-name">{item.name}</h1>
+				<div className = "item-page-item-image">
+				 {item.images.map((item) => {
+				 return ([
+					 <img src = {item.medium} className = "item-page-item-img"/>,
+					 ]);
+			  })}
 				</div>
-				<div className="item-page-items-description">
-					<p className="item-page-items-description-p">
-						{item.description}
-					</p>
+				<button className="item-page-btn" onClick={this._handleAddCart} value={item.id}>
+				add Cart
+			  </button>
+				<div className = "item-page-items-description">
+				 <p className = "description">{item.description}</p>
+				 <p>{item.category}</p>
+				 <h1>${item.price}</h1>
+			 </div>
+				<div className = "specs">
+					{item.specs.map((item) => {
+						return ([
+					 	<div className="value">{item.value}</div>,
+							<div className="label">{item.label}:</div>,
+					 ]);
+				 })}
+
 				</div>
 			</div>
-
 
 		);
 	}
 }
+
+
 
 export default Item;

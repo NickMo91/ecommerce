@@ -11,12 +11,14 @@ class Product extends Component {
 					return ([
 						<div className="product-page-products">
 							<h1 className="product-page-products-header">{product.name}</h1>
-							<p className="product-page-products-category">Category: {product.category}</p>
-							<Link className="product-page-products-l" to={`/Item/${index}`}>
+							<Link className="product-page-products-l" to={`/item/${product.id}`}>
 								<img className="product-page-products-img"
 									 src={product.images[0].medium}
 								/>
 							</Link>
+							<p className="product-page-products-category">
+								Category: {product.category}
+							</p>
 							<p className="product-page-products-price">Price: ${product.price}</p>
 						</div>,
 					]);

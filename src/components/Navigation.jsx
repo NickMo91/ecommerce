@@ -4,14 +4,15 @@ import { NavLink } from "react-router-dom";
 
 class Navigation extends Component {
 	render() {
+		const { cartCount } = this.props;
 		const links = [{
 			to: "/",
 			text: "Home",
 		}, {
-			to: "/Product",
+			to: "/product",
 			text: "Products",
 		}, {
-			to: "cart",
+			to: "/cart",
 			text: "My Cart",
 		},
 		{
@@ -33,6 +34,7 @@ class Navigation extends Component {
 						{link.text}
 					</NavLink>
 				))}
+				<span className = "count">{ cartCount }</span>
 			</nav>
 		);
 	}

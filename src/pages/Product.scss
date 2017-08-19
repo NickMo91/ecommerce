@@ -3,14 +3,23 @@ display: flex;
 flex-flow: row wrap;
 }
 .product-page-products {
-	margin-left: 30px;
-	margin-bottom: 10px;
+	margin-left: 50px;
+	margin-bottom: 30px;
 	width: 400px;
-	border: 1px solid black;
+	border: 1px solid white;
 
 
 	&-header {
 		text-align: center;
-		font-size: 35px;
+		font-size: 25px;
+		margin-bottom: 20px;
+	}
+
+	&-category {
+		margin-left: 10px;
+	}
+
+	&-price {
+		margin-left: 10px;
 	}
 }
