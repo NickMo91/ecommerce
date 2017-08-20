@@ -1,4 +1,5 @@
 import "./Checkout.scss";
+import { Link } from "react-router-dom";
 import React, { Component } from "react";
 
 class CheckOut extends Component {
@@ -23,23 +24,12 @@ class CheckOut extends Component {
 							<input  name="Zip" placeholder="Zipcode"/>
 						</form>
 					</div>
+					<Link to="/success">
+						<button type="submit" className="checkout-page-checkout-btn">
+							Finish Checkout
+						</button>
+					</Link>
 
-					{/* <div className="checkout-page-checkout-billing">
-						<h1>Billing info:</h1>
-						<form className="checkout-page-checkout-form" method="post">
-							<input  name="name" placeholder="First Name"/>
-							<br/>
-							<input  name="name" placeholder="Last Name"/>
-							<br/>
-							<input  name="address" placeholder="Street"/>
-							<input  name="address" placeholder="City"/>
-							<input  name="address" placeholder="State"/>
-							<input  name="address" placeholder="Zipcode"/>
-						</form>
-					</div> */}
-					<button type="submit" className="checkout-page-checkout-btn">
-						Finish Checkout
-					</button>
 				</div>
 			</div>
 

@@ -13,7 +13,7 @@ class Navigation extends Component {
 			text: "Products",
 		}, {
 			to: "/cart",
-			text: "My Cart",
+			text: `My Cart ${cartCount}`,
 		},
 		{
 			to: "/checkout",
@@ -34,7 +34,6 @@ class Navigation extends Component {
 						{link.text}
 					</NavLink>
 				))}
-				<span className = "count">{ cartCount }</span>
 			</nav>
 		);
 	}

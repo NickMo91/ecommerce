@@ -44,13 +44,13 @@ class App extends React.Component {
 			<Provider store={store}>
 				<BrowserRouter>
 					<div>
-						<Navigation cartCount={ this.cartCount }/>
+						<Navigation cartCount={ cartCount }/>
 						<Switch>
 							<Route exact path="/" component={Home} />
 							<Route exact path="/cart" render={(props) => {
 								return (
 									<Cart
-										cart={Cart}
+										cart={cart}
 										cartCount={cartCount}
 									/>
 								);

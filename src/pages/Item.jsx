@@ -9,7 +9,7 @@ class Item extends Component {
 		};
 	}
 
-	_handleAddCart = (itemId) => {
+	_handleAddCart = () => {
 		this.props.handleAdd(this.props.item.id);
 	}
 
@@ -26,7 +26,7 @@ class Item extends Component {
 					 ]);
 			  })}
 				</div>
-				<button className="item-page-btn" onClick={this._handleAddCart} value={item.id}>
+				<button className="item-page-btn" onClick={this._handleAddCart} >
 				Add To Cart
 			  </button>
 				<div className = "item-page-items-description">

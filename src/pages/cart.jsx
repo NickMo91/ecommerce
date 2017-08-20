@@ -10,20 +10,21 @@ class Cart extends Component {
 		};
 	}
 	render() {
-		const { Cart, cartCount } = this.props;
-		const totalPrice = Cart.reduce(function(prev, item) {
+		const { cart, cartCount } = this.props;
+		console.log(cart);
+		const totalPrice = cart.reduce(function(prev, item) {
 			return prev + parseFloat(item.price);
 		},0);
 
 		return (
 			<div className="cartCount">
 
-				{Cart.map((item) => {
+				{cart.map((item) => {
 					return (
 						<div className="cart_info">
 							<h1 className="name">{ item.name } </h1>
-							<img src = { item.image[0].small } className="watchImg"/>
-							<h2 className="price"> $ { item.price }</h2>
+							<img src={ item.images[0].small } className="Img"/>
+							<h2 className="price">${ item.price }</h2>
 						</div>
 					);
 				})}
@@ -32,7 +33,7 @@ class Cart extends Component {
 			 <p className="cart-total-price">Total Price: { totalPrice }</p>
 		 </div>
 		 <div className="cart-checkout-button">
-	 						<Link to= "/success">
+	 						<Link to="/checkout">
 	 							<button> CHECKOUT </button>
 	 						</Link>
 	 					</div>
