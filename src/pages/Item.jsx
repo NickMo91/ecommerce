@@ -27,22 +27,14 @@ class Item extends Component {
 			  })}
 				</div>
 				<button className="item-page-btn" onClick={this._handleAddCart} value={item.id}>
-				add Cart
+				Add To Cart
 			  </button>
 				<div className = "item-page-items-description">
 				 <p className = "description">{item.description}</p>
 				 <p>{item.category}</p>
 				 <h1>${item.price}</h1>
 			 </div>
-				<div className = "specs">
-					{item.specs.map((item) => {
-						return ([
-					 	<div className="value">{item.value}</div>,
-							<div className="label">{item.label}:</div>,
-					 ]);
-				 })}
 
-				</div>
 			</div>
 
 		);
