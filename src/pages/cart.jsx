@@ -11,7 +11,6 @@ class Cart extends Component {
 	}
 	render() {
 		const { cart, cartCount } = this.props;
-		console.log(cart);
 		const totalPrice = cart.reduce(function(prev, item) {
 			return prev + parseFloat(item.price);
 		},0);
@@ -30,7 +29,7 @@ class Cart extends Component {
 				})}
 				<div className="total">
 			 <p className="countTotal">Total Items: { cartCount }</p>
-			 <p className="cart-total-price">Total Price: { totalPrice }</p>
+			 <p className="cart-total-price">Total Price: ${ totalPrice }</p>
 		 </div>
 		 <div className="cart-checkout-button">
 	 						<Link to="/checkout">

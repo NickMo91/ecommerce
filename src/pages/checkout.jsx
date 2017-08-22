@@ -3,10 +3,16 @@ import { Link } from "react-router-dom";
 import React, { Component } from "react";
 
 class CheckOut extends Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+		};
+	}
 	render() {
+		const { cartCount } = this.props;
 		return (
 			<div className="checkout-page">
-				<h1 className="checkout-page-header">Checkout</h1>
+				<h1 className="checkout-page-header">Checkout {cartCount} Items</h1>
 				<div className="checkout-page-checkout">
 					<div className="checkout-page-checkout-shipping">
 						<h1>Shipping info:</h1>

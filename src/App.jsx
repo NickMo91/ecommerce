@@ -1,11 +1,10 @@
 import "./App.scss";
 import React from "react";
-import PRODUCTS from "json/products.json";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { createStore, applyMiddleware } from "redux";
 import { Provider } from "react-redux";
 import reduxThunk from "redux-thunk";
-import reducers from "./reducers";
+import reducers from "reducers";
 import Navigation from "components/Navigation";
 import Home from "pages/Home";
 import FourOhFour from "pages/404";
@@ -15,11 +14,10 @@ import Product from "pages/Product";
 import CheckOut from "pages/Checkout";
 import Item from "pages/Item";
 
-const store = createStore(reducers);
+const store = createStore(reducers, applyMiddleware(reduxThunk));
 
 class App extends React.Component {
 	state = {
-		product: PRODUCTS,
 		cart: [],
 		cartCount: 0,
 	};
@@ -31,7 +29,7 @@ class App extends React.Component {
 	}
 
 	_handleAdd = (itemId) => {
-		const { product, cart } = this.state;
+		const { products, cart } = this.state;
 		this.setState({
 			cart: [...cart, this._getProduct(itemId)],
 			cartCount: cart.length + 1,
@@ -39,7 +37,7 @@ class App extends React.Component {
 	};
 
 	render() {
-		const { product, cart, cartCount } = this.state;
+		const { products, cart, cartCount } = this.state;
 		return (
 			<Provider store={store}>
 				<BrowserRouter>
@@ -57,14 +55,7 @@ class App extends React.Component {
 							}}
 							/>
 							<Route exact path="/success" component={Success}/>
-							<Route exact path="/product" render={(props) => {
-								return (
-									<Product {...props}
-										product={product}
-									/>
-								);
-							}}
-							/>
+							<Route exact path="/product" component={Product}/>
 							<Route exact path="/item/:itemId" render={(props) => {
 								return (
 									<Item

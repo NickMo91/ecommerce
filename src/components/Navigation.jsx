@@ -13,11 +13,11 @@ class Navigation extends Component {
 			text: "Products",
 		}, {
 			to: "/cart",
-			text: `My Cart ${cartCount}`,
+			text: "My Cart",
 		},
 		{
 			to: "/checkout",
-			text: "Check Out",
+			text: `Check Out ${cartCount} Items`,
 		},
 		];
 

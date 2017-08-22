@@ -1,13 +1,18 @@
 import "./Product.scss";
 import React, { Component } from "react";
-import PRODUCTS from "json/products.json";
+import { getProducts } from "actions/products";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
 
 class Product extends Component {
+	componentDidMount() {
+		this.props.getProducts();
+	}
 	render() {
+		const { products } = this.props;
 		return (
 			<div className="product-page">
-				{PRODUCTS.map((product, index) => {
+				{products.map((product, index) => {
 					return ([
 						<div className="product-page-products">
 							<h1 className="product-page-products-header">{product.name}</h1>
@@ -29,5 +34,9 @@ class Product extends Component {
 		);
 	}
 }
-
-export default Product;
+function mapStateToProps(state, props) {
+	return {
+		products: state.products.products,
+	};
+}
+export default connect(mapStateToProps, { getProducts })(Product);
