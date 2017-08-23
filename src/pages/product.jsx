@@ -1,42 +1,63 @@
 import "./Product.scss";
 import React, { Component } from "react";
-import { getProducts } from "actions/products";
-import { Link } from "react-router-dom";
 import { connect } from "react-redux";
+import { getSingleProduct } from "actions/products";
+
 
 class Product extends Component {
-	componentDidMount() {
-		this.props.getProducts();
+	constructor(props) {
+		super(props);
+		this.state = {
+		};
 	}
+
+	componentDidMount() {
+		this.props.getSingleProduct(this.props.productId);
+	}
+
+
+	_handleAddCart = () => {
+		this.props.handleAdd(this.props.product.id);
+	}
+
 	render() {
-		const { products } = this.props;
+		const { product, handleAdd } = this.props;
+		if (!product) {
+			return null;
+		}
 		return (
 			<div className="product-page">
-				{products.map((product, index) => {
-					return ([
-						<div className="product-page-products">
-							<h1 className="product-page-products-header">{product.name}</h1>
-							<Link className="product-page-products-l" to={`/item/${product.id}`}>
-								<img className="product-page-products-img"
-									 src={product.images[0].medium}
-								/>
-							</Link>
-							<p className="product-page-products-category">
-								Category: {product.category}
-							</p>
-							<p className="product-page-products-price">Price: ${product.price}</p>
-						</div>,
-					]);
-				}
-				)}
+				<h1 className = "product-page-product-name">{product.name}</h1>
+				<div className = "product-page-product-image">
+				 {product.images.map((img) => {
+				 return ([
+					 <img src = {img.medium} className = "product-page-product-img"/>,
+					 ]);
+			  })}
+				</div>
+				<button className="product-page-btn" onClick={this._handleAddCart} >
+				Add To Cart
+			  </button>
+				<div className = "product-page-products-description">
+				 <p className = "description">{product.description}</p>
+				 <p>{product.category}</p>
+				 <h1>${product.price}</h1>
+			 </div>
 
 			</div>
+
 		);
 	}
 }
+
 function mapStateToProps(state, props) {
+	const { activeProduct } = state.products;
 	return {
-		products: state.products.products,
+		productId: props.match.params.productId,
+		product: activeProduct,
 	};
 }
-export default connect(mapStateToProps, { getProducts })(Product);
+
+
+
+export default connect(mapStateToProps, { getSingleProduct })(Product);

@@ -10,9 +10,9 @@ import Home from "pages/Home";
 import FourOhFour from "pages/404";
 import Cart from "pages/Cart";
 import Success from "pages/Success";
-import Product from "pages/Product";
+import Products from "pages/Products";
 import CheckOut from "pages/Checkout";
-import Item from "pages/Item";
+import Product from "pages/product";
 
 const store = createStore(reducers, applyMiddleware(reduxThunk));
 
@@ -22,16 +22,16 @@ class App extends React.Component {
 		cartCount: 0,
 	};
 
-	_getProduct = (itemId) => {
-		return this.state.product.reduce((prev, item) => {
-			return item.id === itemId ? item : prev;
+	_getProduct = (productId) => {
+		return this.state.product.reduce((prev, product) => {
+			return product.id === productId ? product : prev;
 		});
 	}
 
-	_handleAdd = (itemId) => {
+	_handleAdd = (productId) => {
 		const { products, cart } = this.state;
 		this.setState({
-			cart: [...cart, this._getProduct(itemId)],
+			cart: [...cart, this._getProduct(productId)],
 			cartCount: cart.length + 1,
 		});
 	};
@@ -55,8 +55,8 @@ class App extends React.Component {
 							}}
 							/>
 							<Route exact path="/success" component={Success}/>
-							<Route exact path="/product" component={Product}/>
-							<Route exact path="/item/:itemId" component={Item}/>
+							<Route exact path="/products" component={Products}/>
+							<Route exact path="/product/:productId" component={Product}/>
 								);
 							}}
 							/>

@@ -8,7 +8,7 @@ export function getProducts() {
 }
 
 
-export function getItem(productId) {
+export function getSingleProduct(productId) {
 	const products = PRODUCTS;
 	return (dispatch) => {
 		const foundProduct = products.find((product) => product.id === productId);

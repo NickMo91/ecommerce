@@ -8,7 +8,7 @@ class Home extends Component {
 		return (
 			<div className="home-page">
 				<h1>TimeX</h1>
-				<p>Go ahead and take a look at our <Link className="home-page-l" to={`/Product`}>Products.</Link></p>
+				<p>Go ahead and take a look at our <Link className="home-page-l" to={`/Products`}>Products.</Link></p>
 			</div>
 		);
 	}
