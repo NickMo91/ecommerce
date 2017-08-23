@@ -1,6 +1,8 @@
 import "./Item.scss";
 import React, { Component } from "react";
-import PRODUCTS from "json/products.json";
+import { connect } from "react-redux";
+import { getItem } from "actions/products";
+
 
 class Item extends Component {
 	constructor(props) {
@@ -9,20 +11,27 @@ class Item extends Component {
 		};
 	}
 
+	componentDidMount() {
+		this.props.getItem(this.props.itemId);
+	}
+
+
 	_handleAddCart = () => {
 		this.props.handleAdd(this.props.item.id);
 	}
 
 	render() {
 		const { item, handleAdd } = this.props;
-
+		if (!item) {
+			return null;
+		}
 		return (
 			<div className="item-page">
 				<h1 className = "item-page-item-name">{item.name}</h1>
 				<div className = "item-page-item-image">
-				 {item.images.map((item) => {
+				 {item.images.map((img) => {
 				 return ([
-					 <img src = {item.medium} className = "item-page-item-img"/>,
+					 <img src = {img.medium} className = "item-page-item-img"/>,
 					 ]);
 			  })}
 				</div>
@@ -41,6 +50,14 @@ class Item extends Component {
 	}
 }
 
+function mapStateToProps(state, props) {
+	const { activeProduct } = state.products;
+	return {
+		itemId: props.match.params.itemId,
+		item: activeProduct,
+	};
+}
 
 
-export default Item;
+
+export default connect(mapStateToProps, { getItem })(Item);

@@ -8,10 +8,12 @@ export function getProducts() {
 }
 
 
-export function getOne(productId) {
+export function getItem(productId) {
 	const products = PRODUCTS;
 	return (dispatch) => {
 		const foundProduct = products.find((product) => product.id === productId);
+		console.log(productId);
+		console.log(foundProduct);
 		return dispatch({
 			type: "GET_ONE_PRODUCT",
 			product: foundProduct,

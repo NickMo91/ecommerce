@@ -16,7 +16,7 @@ export default function(state = INITIAL_STATE, action) {
 	case "GET_ONE_PRODUCT":
       	return {
 			...state,
-			 activeProduct: action.products,
+			 activeProduct: action.product,
 		};
 	default:
 		return state;

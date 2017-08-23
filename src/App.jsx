@@ -56,12 +56,7 @@ class App extends React.Component {
 							/>
 							<Route exact path="/success" component={Success}/>
 							<Route exact path="/product" component={Product}/>
-							<Route exact path="/item/:itemId" render={(props) => {
-								return (
-									<Item
-										handleAdd={this._handleAdd}
-										item={this._getProduct(props.match.params.itemId)}
-									/>
+							<Route exact path="/item/:itemId" component={Item}/>
 								);
 							}}
 							/>
