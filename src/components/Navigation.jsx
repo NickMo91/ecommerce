@@ -1,10 +1,12 @@
 import "./Navigation.scss";
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
+import { connect } from "react-redux";
+
 
 class Navigation extends Component {
 	render() {
-		const { cartCount } = this.props;
+		const { addedProducts } = this.props;
 		const links = [{
 			to: "/",
 			text: "Home",
@@ -17,7 +19,7 @@ class Navigation extends Component {
 		},
 		{
 			to: "/checkout",
-			text: `Check Out ${cartCount} Items`,
+			text: `Check Out ${addedProducts} Items`,
 		},
 		];
 
@@ -39,4 +41,9 @@ class Navigation extends Component {
 	}
 }
 
-export default Navigation;
+function mapStateToProps(state, props) {
+	return {
+		addedProducts: state.cart.addedProducts,
+	};
+}
+export default connect(mapStateToProps) (Navigation);

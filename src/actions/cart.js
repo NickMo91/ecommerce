@@ -1,15 +1,16 @@
-export function addToCart(product, price) {
-	return {
-		type: "ADDED_PRODUCT",
-		product,
-		price,
-	};
-}
-
-export function removeFromCart(product, price) {
-	return {
-		type: "REMOVED_PRODUCT",
-		product,
-		price,
+export function addToCart(product) {
+	return (dispatch) => {
+		if (product) {
+			dispatch({
+				type: "ADD_PRODUCT",
+				product,
+			});
+		}
+		else {
+			dispatch({
+				type: "ERROR_ADD",
+				error: "Couldn't Add Item To The Cart!",
+			});
+		}
 	};
 }

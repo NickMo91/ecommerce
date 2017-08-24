@@ -1,36 +1,37 @@
 const INITIAL_STATE = {
-	addedProducts: [],
-	priceTotal: 0,
+	cart: [],
+	addedProducts: 0,
 };
 
 export default function cartReducer(state = INITIAL_STATE, action) {
 	switch (action.type) {
-	case "ADDED_PRODUCT":
+	case "ADD_PRODUCT":
 		return {
-			...state,
-			addedProducts: [
-				...state.addedProducts,
-				{
-					product: action.product,
-					price: action.price,
-				},
-			],
-			priceTotal: action.price,
-
+			cart: [...state.cart,
+				action.product],
+			addedProducts: state.addedProducts + 1,
 		};
 
-
-	case "REMOVED_PRODUCT":
+	case "ERROR_ADD":
 		return {
 			...state,
-			addedProducts: [
-				...state.addedProducts, {
-					product:  action.product,
-					price:  action.price,
-				},
-			],
+			error: action.error,
 		};
 	default:
 		return state;
+
+	// case "REMOVED_PRODUCT":
+	// 	return {
+	// 		...state,
+	// 		addedProducts: [
+	// 			...state.addedProducts, {
+	// 				product:  action.product,
+	// 				price:  action.price,
+	// 			},
+	// 		],
+	// 	};
+	// default:
+	// 	return state;
+	// }
 	}
 }

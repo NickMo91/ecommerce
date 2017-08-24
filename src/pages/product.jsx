@@ -2,26 +2,20 @@ import "./Product.scss";
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { getSingleProduct } from "actions/products";
-
+import { addToCart } from "actions/cart";
 
 class Product extends Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-		};
-	}
-
 	componentDidMount() {
 		this.props.getSingleProduct(this.props.productId);
 	}
 
 
-	_handleAddCart = () => {
-		this.props.handleAdd(this.props.product.id);
+	_handleAdd = (product) => {
+		this.props.addToCart(this.props.product);
 	}
 
 	render() {
-		const { product, handleAdd } = this.props;
+		const { product, addedProducts, cart } = this.props;
 		if (!product) {
 			return null;
 		}
@@ -35,7 +29,7 @@ class Product extends Component {
 					 ]);
 			  })}
 				</div>
-				<button className="product-page-btn" onClick={this._handleAddCart} >
+				<button className="product-page-btn" onClick={this._handleAdd} >
 				Add To Cart
 			  </button>
 				<div className = "product-page-products-description">
@@ -55,9 +49,11 @@ function mapStateToProps(state, props) {
 	return {
 		productId: props.match.params.productId,
 		product: activeProduct,
+		cart: state.cart,
+		cartTotalItems: state.cart,
 	};
 }
 
 
 
-export default connect(mapStateToProps, { getSingleProduct })(Product);
+export default connect(mapStateToProps, { getSingleProduct, addToCart })(Product);

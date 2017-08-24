@@ -17,42 +17,15 @@ import Product from "pages/product";
 const store = createStore(reducers, applyMiddleware(reduxThunk));
 
 class App extends React.Component {
-	state = {
-		cart: [],
-		cartCount: 0,
-	};
-
-	_getProduct = (productId) => {
-		return this.state.product.reduce((prev, product) => {
-			return product.id === productId ? product : prev;
-		});
-	}
-
-	_handleAdd = (productId) => {
-		const { products, cart } = this.state;
-		this.setState({
-			cart: [...cart, this._getProduct(productId)],
-			cartCount: cart.length + 1,
-		});
-	};
-
 	render() {
-		const { products, cart, cartCount } = this.state;
 		return (
 			<Provider store={store}>
 				<BrowserRouter>
 					<div>
-						<Navigation cartCount={ cartCount }/>
+						<Navigation/>
 						<Switch>
 							<Route exact path="/" component={Home} />
-							<Route exact path="/cart" render={(props) => {
-								return (
-									<Cart
-										cart={cart}
-										cartCount={cartCount}
-									/>
-								);
-							}}
+							<Route exact path="/cart" component={Cart} />
 							/>
 							<Route exact path="/success" component={Success}/>
 							<Route exact path="/products" component={Products}/>
