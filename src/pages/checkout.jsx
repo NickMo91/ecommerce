@@ -15,7 +15,7 @@ class CheckOut extends Component {
 				<h1 className="checkout-page-header">Checkout {cartCount} Items</h1>
 				<div className="checkout-page-checkout">
 					<div className="checkout-page-checkout-shipping">
-						<h1>Shipping info:</h1>
+						<h1>Shipping info</h1>
 						<form  className="checkout-page-checkout-form" method="post">
 							First Name:
 							<input  name="FirstName" placeholder="First Name"/>
