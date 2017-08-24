@@ -5,7 +5,7 @@
     "price": "75.00",
     "rating": 9,
     "description": "With elegant, textured dial details and a soft grey leather strap, this ultra-thin rose gold-tone watch case offers a touch of simplicity and sophistication to your day-to-night look. You will always be a step ahead with our Timex Metropolitan Skyline collection.",
-    "category": "womens",
+    "category": "Womens",
     "specs": [
       {
         "label": "Buckle/Clasp",
@@ -92,7 +92,7 @@
     "price": "57.00",
     "rating": 10,
     "description": "It’s easy to see how this classic timepiece is an everyday favorite. The silver-tone stainless steel expansion band, silver-tone case and Mother-of-Pearl dial offers a lasting look for years to come.",
-    "category": "womens",
+    "category": "Womens",
     "specs": [
       {
         "label": "Band Color",
@@ -175,7 +175,7 @@
     "price": "99.00",
     "rating": 9,
     "description": "The simple silhouettes of our Essential Collection make a clean, understated statement. These minimalist styles embody the belief that less is more, with a casual elegance that’s appropriate for nearly any occasion. Each one is designed with quality materials that stand the test of time, and fine features in which every carefully chosen detail is a standout.",
-    "category": "mens",
+    "category": "Mens",
     "specs": [
       {
         "label": "Buckle/Clasp",
@@ -262,7 +262,7 @@
     "price": "69.00",
     "rating": 10,
     "description": "Combining our 160-year legacy with contemporary updates, the Heritage Collection features iconic designs with a modern spirit. Each style is inspired by the Timex archives, constructed with rich materials that offer lasting enjoyment. To wear one is to honor the precision of pure craftsmanship and the spirit of authentic watchmaking.",
-    "category": "mens",
+    "category": "Mens",
     "specs": [
       {
         "label": "Buckle/Clasp",
@@ -349,7 +349,7 @@
     "price": "52.00",
     "rating": 8,
     "description": "We’re celebrating 40 years of our landmark Easy Reader® watch with a special edition featuring a rich black leather strap, eye-catching red details and a unique anniversary INDIGLO® dial.",
-    "category": "womens",
+    "category": "Womens",
     "specs": [
       {
         "label": "Buckle/Clasp",
@@ -436,7 +436,7 @@
     "price": "109.00",
     "rating": 9,
     "description": "Combining our 160-year legacy with contemporary updates, the Heritage Collection features iconic designs with a modern spirit. Each style is inspired by the Timex archives, constructed with rich materials that offer lasting enjoyment. To wear one is to honor the precision of pure craftsmanship and the spirit of authentic watchmaking.",
-    "category": "mens",
+    "category": "Mens",
     "specs": [
       {
         "label": "Buckle/Clasp",
@@ -523,7 +523,7 @@
     "price": "89.00",
     "rating": 10,
     "description": "The simple silhouettes of our Essential Collection make a clean, understated statement. These minimalist styles embody the belief that less is more, with a casual elegance that’s appropriate for nearly any occasion. Each one is designed with quality materials that stand the test of time, and fine features in which every carefully chosen detail is a standout.",
-    "category": "womens",
+    "category": "Womens",
     "specs": [
       {
         "label": "Buckle/Clasp",
@@ -610,7 +610,7 @@
     "price": "52.00",
     "rating": 9,
     "description": "Are you ready for the weekend? This two-piece felt and leather strap gives you a fun option to customize your Weekender® watch depending on your outfit or mood. Fits any 20mm traditional, slip-thru or quick-release strap.",
-    "category": "mens",
+    "category": "Mens",
     "specs": [
       {
         "label": "Buckle/Clasp",
@@ -697,6 +697,7 @@
     "price": "25.00",
     "rating": 9,
     "description": "Our Time Machines™ collection offers watches just for kids that have easy-to-read dials, adjustable nylon bands and are 30 meter water resistant. This unique purple space-dye athleisure design will match any child’s personality!",
+    "category": "Kids",
     "specs": [
       {
         "label": "Buckle/Clasp",
@@ -783,6 +784,7 @@
     "price": "30.00",
     "rating": 8,
     "description": "We’ve teamed up with the Peanuts gang to help kids tell time. This adorable watch features our easy-to-read dial highlighting Snoopy and Woodstock and adjustable flower-themed elastic band. Plus, all of our kids’ watches are covered by our 100% worry-free replacement plan so you don’t worry about lost or broken watches. See timex.com/kids-warranty.html for details.",
+    "category": "Kids",
     "specs": [
       {
         "label": "Buckle/Clasp",

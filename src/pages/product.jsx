@@ -21,23 +21,26 @@ class Product extends Component {
 		}
 		return (
 			<div className="product-page">
-				<h1 className = "product-page-product-name">{product.name}</h1>
-				<div className = "product-page-product-image">
+				<h1 className = "product-page-name">{product.name}</h1>
+				<div className= "product-page-render">
+					<div className = "product-page-render-image">
 				 {product.images.map((img) => {
 				 return ([
-					 <img src = {img.medium} className = "product-page-product-img"/>,
+					 <img src = {img.medium} className = "product-page-render-image-img"/>,
 					 ]);
 			  })}
-				</div>
-				<button className="product-page-btn" onClick={this._handleAdd} >
+					</div>
+					<div className="product-page-render-btn">
+						<button className="product-page-btn" onClick={this._handleAdd} >
 				Add To Cart
 			  </button>
-				<div className = "product-page-products-description">
-				 <p className = "description">{product.description}</p>
-				 <p>{product.category}</p>
-				 <h1>${product.price}</h1>
+					</div>
+					<div className = "product-page-render-description">
+						 <p className="category">Category: {product.category}</p>
+				 <p className="description">{product.description}</p>
+				 <h1 className="price">${product.price}</h1>
 			 </div>
-
+				</div>
 			</div>
 
 		);
@@ -50,7 +53,7 @@ function mapStateToProps(state, props) {
 		productId: props.match.params.productId,
 		product: activeProduct,
 		cart: state.cart,
-		cartTotalItems: state.cart,
+		addedProducts: state.cart,
 	};
 }
 

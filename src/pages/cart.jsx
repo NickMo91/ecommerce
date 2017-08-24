@@ -1,3 +1,4 @@
+import "./Cart.scss";
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
@@ -13,26 +14,30 @@ class Cart extends Component {
 		},0);
 
 		return (
-			<div className="addedProducts">
+			<div className="cart">
 
 				{cart.map((item) => {
 					return (
-						<div className="cart_info">
-							<h1 className="name">{ item.name } </h1>
-							<img src={ item.images[0].small } className="Img"/>
-							<h2 className="price">${ item.price }</h2>
+						<div className="cart-product">
+							<h1 className="cart-product-name">{ item.name } </h1>
+							<img src={ item.images[0].small } className="cart-product-img"/>
+							<h2 className="cart-product-price">${ item.price }</h2>
 						</div>
 					);
 				})}
-				<div className="total">
-			 <p className="countTotal">Total Items: { addedProducts }</p>
-			 <p className="cart-total-price">Total Price: ${ totalPrice }</p>
+				<div className="cart-info">
+			 <p className="cart-info-total-items">Total Items: { addedProducts }</p>
+			 <p className="cart-info-total-price">Total Price: ${ totalPrice }</p>
+			 <div >
+		 						<Link to="/checkout">
+		 							<button className="cart-button-checkout"> Proceed To Checkout </button>
+		 						</Link>
+						<br/>
+						<Link to="/Products">
+							<button className="cart-button-add">Add More Items</button>
+						</Link>
+		 					</div>
 		 </div>
-		 <div className="cart-checkout-button">
-	 						<Link to="/checkout">
-	 							<button> CHECKOUT </button>
-	 						</Link>
-	 					</div>
 			</div>
 		);
 	}

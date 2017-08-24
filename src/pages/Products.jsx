@@ -12,24 +12,26 @@ class Products extends Component {
 		const { products } = this.props;
 		return (
 			<div className="products-page">
-				{products.map((products, index) => {
-					return ([
-						<div className="products-page-products">
-							<h1 className="products-page-products-header">{products.name}</h1>
-							<Link className="products-page-products-l" to={`/product/${products.id}`}>
-								<img className="products-page-products-img"
-									 src={products.images[0].medium}
-								/>
-							</Link>
-							<p className="products-page-products-category">
+				<h1 className="products-page-heading">TimeX</h1>
+				<div className="products-page-render">
+					{products.map((products, index) => {
+						return ([
+							<div className="products-page-render-products">
+								<h1 className="products-page-render-products-header">{products.name}</h1>
+								<Link className="products-page-render-products-l" to={`/product/${products.id}`}>
+									<img className="products-page-render-products-img"
+										src={products.images[0].medium}
+									/>
+								</Link>
+								<p className="products-page-render-products-category">
 								Category: {products.category}
-							</p>
-							<p className="products-page-products-price">Price: ${products.price}</p>
-						</div>,
-					]);
-				}
-				)}
-
+								</p>
+								<p className="products-page-render-products-price">Price: ${products.price}</p>
+							</div>,
+						]);
+					}
+					)}
+				</div>
 			</div>
 		);
 	}

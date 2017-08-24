@@ -1,12 +1,21 @@
-.products-page {
+.products-page-heading {
+	font-size: 50px;
+	font-weight: bold;
+	color: #3a3a3a;
+	text-align: center;
+	margin-bottom: 30px;
+}
+
+.products-page-render {
 display: flex;
 flex-flow: row wrap;
 }
-.products-page-products {
+
+.products-page-render-products {
 	margin-left: 50px;
 	margin-bottom: 30px;
 	width: 400px;
-	border: 1px solid white;
+	border-bottom: 1px solid #d1d1d1;
 
 
 	&-header {

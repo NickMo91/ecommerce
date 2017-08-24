@@ -15,11 +15,7 @@ class Navigation extends Component {
 			text: "Products",
 		}, {
 			to: "/cart",
-			text: "My Cart",
-		},
-		{
-			to: "/checkout",
-			text: `Check Out ${addedProducts} Items`,
+			text: `My Cart ${addedProducts}`,
 		},
 		];
 
