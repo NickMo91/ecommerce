@@ -1,22 +1,55 @@
-import PRODUCTS from "json/products.json";
+import API from "util/ecommerceApi.js";
 
 export function getProducts() {
-	return {
-		type: "GET_ALL_PRODUCTS",
-		products: PRODUCTS,
+	return (dispatch) => {
+		dispatch({ type: "LOADING_PRODUCTS" });
+		API.get("/products").then((res) => {
+			console.log(" getAll() action/function res.data: ", res.data);
+			if (res.data) {
+				dispatch({
+					type: "GET_ALL_PRODUCTS",
+					products: res.data.products,
+				});
+			}
+			else {
+				dispatch({
+					type: "PRODUCTS_CANT_LOAD",
+					error: res.error,
+				});
+			}
+		}).catch((error) => {
+			dispatch({
+				type: "	PRODUCTS_CANT_LOAD",
+				error: "Something Failed",
+			});
+		});
 	};
 }
 
 
 export function getSingleProduct(productId) {
-	const products = PRODUCTS;
 	return (dispatch) => {
-		const foundProduct = products.find((product) => product.id === productId);
-		console.log(productId);
-		console.log(foundProduct);
-		return dispatch({
-			type: "GET_ONE_PRODUCT",
-			product: foundProduct,
-		});
+		dispatch({ type: "LOADING-SELECTED_PRODUCT" });
+		API.get(`/product/${productId}`).then((res) => {
+			console.log("getOne(product) action/function  res.data: ", res.data.product);
+			if (res.data) {
+				dispatch({
+					type: "	SELECTED_PRODUCT_CANT_LOAD_SUCCESS",
+					product: res.data.product,
+				});
+			}
+			else {
+				dispatch({
+					type: "SELECTED_PRODUCT_CANT_LOAD",
+					error: "Product Not Found!",
+				});
+			}
+		})
+			.catch((err) => {
+				dispatch({
+					type: "SELECTED_PRODUCT_CANT_LOAD",
+					error: "Something Went Wrong!",
+				});
+			});
 	};
 }

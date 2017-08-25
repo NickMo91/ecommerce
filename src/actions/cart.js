@@ -1,3 +1,5 @@
+import "util/ecommerceApi.js";
+
 export function addToCart(product) {
 	return (dispatch) => {
 		if (product) {

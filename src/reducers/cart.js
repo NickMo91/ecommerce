@@ -17,21 +17,16 @@ export default function cartReducer(state = INITIAL_STATE, action) {
 			...state,
 			error: action.error,
 		};
+
+	// case "REMOVE_PRODUCT":
+	// 	return {
+	// 		cart: [...state.cart,
+	// 			action.product],
+	// 		addedProducts: state.addedProducts - 1,
+	// 	};
+
+
 	default:
 		return state;
-
-	// case "REMOVED_PRODUCT":
-	// 	return {
-	// 		...state,
-	// 		addedProducts: [
-	// 			...state.addedProducts, {
-	// 				product:  action.product,
-	// 				price:  action.price,
-	// 			},
-	// 		],
-	// 	};
-	// default:
-	// 	return state;
-	// }
 	}
 }
