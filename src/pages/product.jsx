@@ -12,26 +12,30 @@ class Product extends Component {
 
 	_handleAdd = (product) => {
 		this.props.addToCart(this.props.product);
-	}
+	};
 
 	render() {
 		const { product, addedProducts, cart } = this.props;
+
+
 		if (!product) {
 			return null;
 		}
+
 		return (
 			<div className="product-page">
 				<h1 className = "product-page-name">{product.name}</h1>
 				<div className= "product-page-render">
 					<div className = "product-page-render-image">
-				 {product.images.map((img) => {
-				 return ([
-					 <img src = {img.medium} className = "product-page-render-image-img"/>,
-					 ]);
-			  })}
+						{product.images.map((product) => {
+							return ([
+								<img src = {product.medium} className="product-page-render-image-img"/>,
+							]);
+						})}
+
 					</div>
 					<div className="product-page-render-btn">
-						<button className="product-page-btn" onClick={this._handleAdd} >
+						<button className="product-page-btn" onClick={this._handleAdd}>
 				Add To Cart
 			  </button>
 					</div>

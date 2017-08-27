@@ -22,7 +22,7 @@ export default function(state = INITIAL_STATE, action) {
       	products: action.products,
     			};
 
-	case "LOADING_PRODUCT":
+	case "LOADING_PRODUCTS":
 		return {
 			...state,
 			isLoading: true,
@@ -40,7 +40,7 @@ export default function(state = INITIAL_STATE, action) {
 		return {
 			...state,
 			activeProduct: action.product,
-			isLOADING: false,
+			isLoading: false,
 		};
 
 

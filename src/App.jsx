@@ -11,7 +11,7 @@ import FourOhFour from "pages/404";
 import Cart from "pages/Cart";
 import Success from "pages/Success";
 import Products from "pages/Products";
-import CheckOut from "pages/Checkout";
+import Checkout from "pages/Checkout";
 import Product from "pages/product";
 
 const store = createStore(reducers, applyMiddleware(reduxThunk));
@@ -33,7 +33,7 @@ class App extends React.Component {
 								);
 							}}
 							/>
-							<Route exact path="/Checkout" component={CheckOut}/>
+							<Route exact path="/Checkout" component={Checkout}/>
 							<Route path="*" component={FourOhFour} />
 						</Switch>
 					</div>

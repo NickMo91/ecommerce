@@ -5,4 +5,4 @@ import checkout from "./checkout";
 
 
 
-export default combineReducers({ products, cart });
+export default combineReducers({ products, cart, checkout });

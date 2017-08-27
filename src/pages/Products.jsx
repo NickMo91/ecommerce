@@ -10,17 +10,20 @@ class Products extends Component {
 	}
 	render() {
 		const { products } = this.props;
-		return (
+		if (!products) {
+			return <p>Loading</p>;
+		} else
+		{return (
 			<div className="products-page">
 				<h1 className="products-page-heading">TimeX</h1>
 				<div className="products-page-render">
-					{products.map((products, index) => {
+					{products.map((products) => {
 						return ([
 							<div className="products-page-render-products">
 								<h1 className="products-page-render-products-header">{products.name}</h1>
 								<Link className="products-page-render-products-l" to={`/product/${products.id}`}>
 									<img className="products-page-render-products-img"
-										src={products.images[0].medium}
+										src={products.image.medium}
 									/>
 								</Link>
 								<p className="products-page-render-products-category">
@@ -33,7 +36,7 @@ class Products extends Component {
 					)}
 				</div>
 			</div>
-		);
+		);}
 	}
 }
 function mapStateToProps(state, props) {

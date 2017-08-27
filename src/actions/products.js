@@ -1,10 +1,9 @@
-import API from "util/ecommerceApi.js";
+import API from "util/ecommerceApi";
 
 export function getProducts() {
 	return (dispatch) => {
 		dispatch({ type: "LOADING_PRODUCTS" });
 		API.get("/products").then((res) => {
-			console.log(" getAll() action/function res.data: ", res.data);
 			if (res.data) {
 				dispatch({
 					type: "GET_ALL_PRODUCTS",
@@ -29,13 +28,14 @@ export function getProducts() {
 
 export function getSingleProduct(productId) {
 	return (dispatch) => {
-		dispatch({ type: "LOADING-SELECTED_PRODUCT" });
-		API.get(`/product/${productId}`).then((res) => {
-			console.log("getOne(product) action/function  res.data: ", res.data.product);
+		dispatch({ type: "LOADING_SELECTED_PRODUCT" });
+		API.get(`/products/${productId}`).then((res) => {
+			console.log(res.data.product);
 			if (res.data) {
 				dispatch({
-					type: "	SELECTED_PRODUCT_CANT_LOAD_SUCCESS",
+					type: "SELECTED_PRODUCT_LOAD_SUCCESS",
 					product: res.data.product,
+					productId: res.data.product.id,
 				});
 			}
 			else {
