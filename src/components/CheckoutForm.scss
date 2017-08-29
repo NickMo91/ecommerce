@@ -2,7 +2,8 @@
 .checkout-form {
 	background-color: #cecece;
 display: block;
-
+border: 1px solid black;
+box-shadow: 2px 2px #000;
 margin: 20px 200px;
 width: 500px;
 height: 500px;
@@ -23,14 +24,7 @@ input{
 margin: 5px;
 }
 
-select {
-	width: 50%;
-	height: 30px;
-	background-color: #353535;;
-	color: #e8e8e8;
-	margin: 5px;
-	font-size: 15px;
-}
+
 
 .checkout-form-form-button {
 	margin: 20px;

@@ -13,33 +13,44 @@ class Cart extends Component {
 			return prev + parseFloat(item.price);
 		},0);
 
-		return (
-			<div className="cart">
+		if (addedProducts > 0) {
+			return (
+				<div className="cart">
 
-				{cart.map((item) => {
-					return (
-						<div className="cart-product">
-							<h1 className="cart-product-name">{ item.name } </h1>
-							<img src={ item.images[0].small } className="cart-product-img"/>
-							<h2 className="cart-product-price">${ item.price }</h2>
-						</div>
-					);
-				})}
-				<div className="cart-info">
+					{cart.map((item) => {
+						return (
+							<div className="cart-product">
+								<h1 className="cart-product-name">{ item.name } </h1>
+								<img src={ item.images[0].small } className="cart-product-img"/>
+								<h2 className="cart-product-price">${ item.price }</h2>
+							</div>
+						);
+					})}
+					<div className="cart-info">
 			 <p className="cart-info-total-items">Total Items: { addedProducts }</p>
 			 <p className="cart-info-total-price">Total Price: ${ totalPrice }</p>
 			 <div >
 		 						<Link to="/checkout">
 		 							<button className="cart-button-checkout"> Proceed To Checkout </button>
 		 						</Link>
-						<br/>
-						<Link to="/Products">
-							<button className="cart-button-add">Add More Items</button>
-						</Link>
+							<br/>
+							<Link to="/Products">
+								<button className="cart-button-add">Add More Items</button>
+							</Link>
 		 					</div>
 		 </div>
-			</div>
-		);
+				</div>
+			);
+		} else {
+			return (
+				<div>
+					<p className="empty-cart">Your Cart Is Currently Empty!</p>
+					<Link to="/Products">
+						<p className="empty-cart-link">Go Back To Products!</p>
+					</Link>
+				</div>
+			);
+		}
 	}
 }
 

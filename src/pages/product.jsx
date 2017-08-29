@@ -41,8 +41,8 @@ class Product extends Component {
 					</div>
 					<div className = "product-page-render-description">
 						 <p className="category">Category: {product.category}</p>
+						 <h1 className="price">Price: ${product.price}</h1>
 				 <p className="description">{product.description}</p>
-				 <h1 className="price">${product.price}</h1>
 			 </div>
 				</div>
 			</div>

@@ -108,6 +108,7 @@ router.post("/orders", (req, res) => {
 		});
 	}
 
+
 	// First create the order
 	Order.create({
 		name: req.body.name,

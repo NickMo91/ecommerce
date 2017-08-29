@@ -34,10 +34,10 @@ flex-flow: row wrap;
 	&-button-checkout {
 		color: red;
 		font-size: 30px;
-		background-color: #cecece;
+		background-color: #f7f4f4;
 
  &:hover {
-	 font-size: 32px;
+	 font-size: 31px;
  }
 	}
 
@@ -46,10 +46,22 @@ flex-flow: row wrap;
 		color: red;
 		font-size: 30px;
 		width: 310px;
-		background-color: #cecece;
+		background-color: #f7f4f4;
 
 		&:hover {
-	 	 font-size: 32px;
+	 	 font-size: 31px;
 	  }
 	}
+}
+
+.empty-cart {
+	font-size: 30px;
+	text-align: center;
+	margin-top: 50px;
+}
+
+.empty-cart-link {
+	font-size: 30px;
+	text-align: center;
+	margin-top: 50px;
 }
