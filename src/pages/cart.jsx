@@ -43,8 +43,8 @@ class Cart extends Component {
 			);
 		} else {
 			return (
-				<div>
-					<p className="empty-cart">Your Cart Is Currently Empty!</p>
+				<div className="empty-cart">
+					<p className="empty-cart-p">Your Cart Is Currently Empty!</p>
 					<Link to="/Products">
 						<p className="empty-cart-link">Go Back To Products!</p>
 					</Link>
