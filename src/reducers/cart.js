@@ -24,7 +24,7 @@ export default function cartReducer(state = INITIAL_STATE, action) {
 	// 			action.product],
 	// 		addedProducts: state.addedProducts - 1,
 	// 	};
-	case "SUBMIT_SUCCESS":
+	case "SUBMIT_ORDER_SUCCESS":
 		return {
 			...state,
 			cart: [],

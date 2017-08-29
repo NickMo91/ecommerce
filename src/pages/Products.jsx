@@ -26,9 +26,6 @@ class Products extends Component {
 										src={products.image.medium}
 									/>
 								</Link>
-								<p className="products-page-render-products-category">
-								Category: {products.category}
-								</p>
 								<p className="products-page-render-products-price">Price: ${products.price}</p>
 							</div>,
 						]);
