@@ -26,13 +26,9 @@ class App extends React.Component {
 						<Switch>
 							<Route exact path="/" component={Home} />
 							<Route exact path="/cart" component={Cart} />
-							/>
 							<Route exact path="/success" component={Success}/>
 							<Route exact path="/products" component={Products}/>
 							<Route exact path="/product/:productId" component={Product}/>
-								);
-							}}
-							/>
 							<Route exact path="/Checkout" component={Checkout}/>
 							<Route path="*" component={FourOhFour} />
 						</Switch>
